@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Box {{ box_id }}{% endblock %}
+
+{% block content %}
+    <h1>Box {{ box_id }}</h1>
+    <form method="post">
+        <textarea name="content" required></textarea>
+        <button type="submit">Comment</button>
+    </form>
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment.content }} - {{ comment.timestamp }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
