@@ -11,7 +11,7 @@ def index():
 @bp.route('/box/<int:box_id>', methods=['GET', 'POST'])
 def box(box_id):
     if request.method == 'POST':
-        content = request.form['content']
+        content = request.form['content'] 
         comment = Comment(box_id=box_id, content=content)
         db.session.add(comment)
         db.session.commit()
